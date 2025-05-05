@@ -46,6 +46,12 @@ def main():
         pygame.display.flip()
         dt = clock.tick(60)/1000
 
+        for i in group_asteroids:
+            for j in group_shots:
+                if i.collision(j):
+                    i.split()
+                    j.kill()
+
 
 if __name__ == "__main__":
     main()
